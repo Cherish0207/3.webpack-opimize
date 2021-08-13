@@ -25,3 +25,15 @@ module.exports = {
   },
 };
 ```
+
+### IgnorePlugin
+
+> webpack内置插件,用于忽略某些特定的模块，让 webpack 不把这些指定的模块打包进去
+
+引入 moment 库后,包变的很大,有 1.08MB
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7f03171d2ed644f882ebf8172dc46ac0~tplv-k3u1fbpfcp-watermark.image)
+
+原因是加载 moment 时加载了很多语言包
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4c9086542244653bc710774062e8948~tplv-k3u1fbpfcp-watermark.image)
