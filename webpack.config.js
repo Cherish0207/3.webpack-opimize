@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 const path = require("path");
 module.exports = {
   entry: "./src/index.js",
@@ -23,5 +24,11 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [
+    new HtmlWebpackPlugin(),
+    new webpack.IgnorePlugin({
+      contextRegExp: /moment$/, //匹配引入模块路径的正则表达式
+      resourceRegExp: /^\.\/locale/, // 匹配模块的对应上下文，即所在目录名
+    }),
+  ],
 };

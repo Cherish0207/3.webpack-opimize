@@ -28,7 +28,14 @@ module.exports = {
 
 ### IgnorePlugin
 
-> webpack内置插件,用于忽略某些特定的模块，让 webpack 不把这些指定的模块打包进去
+> webpack 内置插件,用于忽略某些特定的模块，让 webpack 不把这些指定的模块打包进去
+
+```js
+import moment from "moment";
+// console.log(moment().format("MMMM Do YYYY, h:mm:ss a")); // August 13th 2021, 3:43:08 pm
+moment.locale("zh-cn");
+console.log(moment().format("MMMM Do YYYY, h:mm:ss a")); // 八月 13日 2021, 3:44:05 下午
+```
 
 引入 moment 库后,包变的很大,有 1.08MB
 
@@ -37,3 +44,16 @@ module.exports = {
 原因是加载 moment 时加载了很多语言包
 
 ![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b4c9086542244653bc710774062e8948~tplv-k3u1fbpfcp-watermark.image)
+
+```js
+new webpack.IgnorePlugin({
+  contextRegExp: /moment$/,
+  resourceRegExp: /^\.\/locale/,
+}),
+```
+
+优化后 544kb
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5016359589cf488b97d25c1f1a798d42~tplv-k3u1fbpfcp-watermark.image)
+
+此时需要手动引入所需要的语言
