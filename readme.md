@@ -57,3 +57,9 @@ new webpack.IgnorePlugin({
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5016359589cf488b97d25c1f1a798d42~tplv-k3u1fbpfcp-watermark.image)
 
 此时需要手动引入所需要的语言
+
+### DDL
+
+直接打包 react 项目,打出来的包 1.34MB:
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ff05c293ae44044bd1abe123bf70220~tplv-k3u1fbpfcp-watermark.image)

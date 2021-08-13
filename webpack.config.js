@@ -8,6 +8,11 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+  devServer: {
+    port: 3000,
+    open: true,
+    contentBase: "./dist",
+  },
   module: {
     noParse: /jquery|lodash/,
     rules: [
@@ -25,7 +30,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public/index.html"),
+    }),
     new webpack.IgnorePlugin({
       contextRegExp: /moment$/, //匹配引入模块路径的正则表达式
       resourceRegExp: /^\.\/locale/, // 匹配模块的对应上下文，即所在目录名
