@@ -6,6 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
+var testLibraryName;
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -15,7 +16,7 @@
   \*********************/
 /***/ ((module) => {
 
-eval("module.exports = {\n  a: 1,\n};\n\n\n//# sourceURL=webpack://3.webpack-opimize/./src/test.js?");
+eval("module.exports = {\n  a: 1,\n};\n\n\n//# sourceURL=webpack://testLibraryName/./src/test.js?");
 
 /***/ })
 
@@ -51,6 +52,7 @@ eval("module.exports = {\n  a: 1,\n};\n\n\n//# sourceURL=webpack://3.webpack-opi
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/test.js");
+/******/ 	testLibraryName = __webpack_exports__;
 /******/ 	
 /******/ })()
 ;
