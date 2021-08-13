@@ -31,7 +31,10 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "public/index.html"),
+      template: path.resolve(__dirname, "./public/index.html"),
+    }),
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, "dist", "manifest.json"),
     }),
     new webpack.IgnorePlugin({
       contextRegExp: /moment$/, //匹配引入模块路径的正则表达式
