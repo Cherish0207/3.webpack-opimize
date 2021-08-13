@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   module: {
+    noParse: /jquery|lodash/,
     rules: [
       {
         test: /\.js$/,
