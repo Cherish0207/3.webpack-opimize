@@ -6,17 +6,7 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else if(typeof exports === 'object')
-		exports["testLibraryName"] = factory();
-	else
-		root["testLibraryName"] = factory();
-})(self, function() {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/test.js":
@@ -61,8 +51,7 @@ eval("module.exports = {\n  a: 1,\n};\n\n\n//# sourceURL=webpack://testLibraryNa
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/test.js");
+/******/ 	this.testLibraryName = __webpack_exports__;
 /******/ 	
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});

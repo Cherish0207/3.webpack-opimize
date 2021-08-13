@@ -9,7 +9,7 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     library: "testLibraryName",
-    libraryTarget: 'umd'
+    libraryTarget: 'this'
   },
   plugins: [],
 };
