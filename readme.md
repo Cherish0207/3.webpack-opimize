@@ -79,3 +79,8 @@ new webpack.IgnorePlugin({
 > --> 即 tree-shaking: 把没用的代码自动删除掉
 
 require 语法不支持 tree-shaking(前端问为什么要使用 import 语法?)
+
+### scope hosting 作用域提升
+
+> webpack3 开始加了 scope hosting 功能
+> 在 webpack 中自动省略一些可以简化的代码
