@@ -70,3 +70,12 @@ new webpack.IgnorePlugin({
 
 - 当项目文件很小,用多线程打包反而会慢,因为要分配多个线程的过程也会浪费一些性能
 - 当项目较大,才能起到优化作用
+
+### webpack 自带优化
+
+### tree-shaking
+
+> 生产环境下,使用 import 语法会自动去除掉没用的代码
+> --> 即 tree-shaking: 把没用的代码自动删除掉
+
+require 语法不支持 tree-shaking(前端问为什么要使用 import 语法?)
