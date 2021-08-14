@@ -63,3 +63,10 @@ new webpack.IgnorePlugin({
 直接打包 react 项目,打出来的包 1.34MB:
 
 ![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3ff05c293ae44044bd1abe123bf70220~tplv-k3u1fbpfcp-watermark.image)
+
+## webpack 实现多线程打包:happypack
+
+`npm i happypack -D`
+
+- 当项目文件很小,用多线程打包反而会慢,因为要分配多个线程的过程也会浪费一些性能
+- 当项目较大,才能起到优化作用
