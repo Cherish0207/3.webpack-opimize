@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
-const Happypack = require("happypack");
 const path = require("path");
 module.exports = {
   entry: "./src/index.js",
@@ -21,30 +20,16 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         include: path.resolve("src"),
-        use: "Happypack/loader?id=js", // 标识是打包js的
-      },
-      {
-        test: /\.css$/,
-        use: "Happypack/loader?id=css",
-      },
-    ],
-  },
-  plugins: [
-    new Happypack({
-      id: "js",
-      use: [
-        {
+        use: {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env", "@babel/preset-react"],
           },
         },
-      ],
-    }),
-    new Happypack({
-      id: "css",
-      use: ["style-loader", "css-loader"],
-    }),
+      },
+    ],
+  },
+  plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
     }),
