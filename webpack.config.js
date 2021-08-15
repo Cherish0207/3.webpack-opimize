@@ -7,6 +7,7 @@ module.exports = {
     other: "./src/other.js",
   },
   /**
+   * webpack4以前是用插件commonChunkPLugins
    * optimization: 优化
    * splitChunks: 分割代码块
    * cacheGroups: 缓存组
@@ -20,6 +21,13 @@ module.exports = {
           chunks: "initial", // 从入口
           minSize: 0, // 大于0个公用字节
           minChunks: 2, // 引入两次以上抽离
+        },
+        vendor: {
+          priority: 1, // 提升优先级
+          test: /node_modules/, // 把你抽离出来
+          chunks: "initial",
+          minSize: 0,
+          minChunks: 2,
         },
       },
     },
