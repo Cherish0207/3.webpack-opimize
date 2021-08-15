@@ -80,7 +80,13 @@ new webpack.IgnorePlugin({
 
 require 语法不支持 tree-shaking(前端问为什么要使用 import 语法?)
 
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a0a4c94a3d384f569ee0940ac34217f1~tplv-k3u1fbpfcp-watermark.image)
+
 ### scope hosting 作用域提升
 
 > webpack3 开始加了 scope hosting 功能
 > 在 webpack 中自动省略一些可以简化的代码
+
+### 抽取公共代码:splitChunks:分割代码块
+
+> 针对多页应用

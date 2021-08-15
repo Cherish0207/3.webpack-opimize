@@ -6,6 +6,24 @@ module.exports = {
     index: "./src/index.js",
     other: "./src/other.js",
   },
+  /**
+   * optimization: 优化
+   * splitChunks: 分割代码块
+   * cacheGroups: 缓存组
+   * common: 公共的模块
+   */
+  optimization: {
+    // minizer: "", // 压缩
+    splitChunks: {
+      cacheGroups: {
+        common: {
+          chunks: "initial", // 从入口
+          minSize: 0, // 大于0个公用字节
+          minChunks: 2, // 引入两次以上抽离
+        },
+      },
+    },
+  },
   mode: "production",
   output: {
     filename: "[name].js",
